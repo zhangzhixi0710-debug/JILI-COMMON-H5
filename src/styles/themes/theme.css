@@ -1,0 +1,19 @@
+:root {
+    --color-bg-page: #0b1020;
+    --color-text-main: #f3f4f6;
+    --color-panel: rgba(255, 255, 255, 0.12);
+}
+
+.dark {
+    --color-bg-page: #030712;
+    --color-text-main: #e5e7eb;
+    --color-panel: rgba(255, 255, 255, 0.08);
+}
+
+.tw-bg-page {
+    background-color: var(--color-bg-page);
+}
+
+.tw-text-main {
+    color: var(--color-text-main);
+}
