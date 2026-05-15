@@ -1,25 +1,26 @@
 <template>
+    <!-- 可拖拽悬浮菜单 -->
     <div
-        class="floating-menu"
+        class="floating-menu fixed z-[9999] flex h-[110px] w-[110px] touch-none items-center rounded-[65px] bg-black bg-opacity-80"
         :style="{ top: position.y + 'px', left: position.x + 'px' }"
         ref="menu"
         @touchstart="startDrag"
         @touchmove="onDrag"
         @touchend="endDrag"
     >
-        <!-- Avatar Toggle -->
-        <div class="avatar-wrapper" @click="toggleMenu">
-            <img src="@/assets/global/avatar.png" alt="avatar" class="avatar" />
+        <!-- 悬浮菜单开关头像 -->
+        <div class="h-[110px] w-[110px] flex-shrink-0 overflow-hidden rounded-full" @click="toggleMenu">
+            <img src="@/assets/global/avatar.png" alt="avatar" class="h-full w-full object-cover" />
         </div>
 
-        <!-- Icons -->
+        <!-- 展开后的快捷入口图标 -->
         <div
             v-for="(item, index) in menuItems"
             :key="index"
-            class="icon-wrapper"
+            class="icon-wrapper ml-2 flex items-center justify-center rounded-full text-xl text-white opacity-0"
             :ref="'icon' + index"
         >
-            <img :src="item.img" alt="avatar" class="avatar" />
+            <img :src="item.img" alt="avatar" class="h-[60px] w-[60px] object-cover" />
         </div>
     </div>
 </template>
@@ -35,20 +36,26 @@ export default {
     name: "Suspension",
     data() {
         return {
-            menuOpen: false,
-            dragging: false,
-            startX: 0,
-            startY: 0,
-            position: { x: 15, y: 36 },
-            menuItems: [{ img: F1 }, { img: F2 }, { img: F3 }, { img: F4 }, { img: F5 }],
+            menuOpen: false, // 菜单是否展开
+            dragging: false, // 是否正在拖拽悬浮菜单
+            startX: 0, // 触摸点与菜单左侧的横向距离
+            startY: 0, // 触摸点与菜单顶部的纵向距离
+            position: { x: 15, y: 36 }, // 悬浮菜单当前位置
+            menuItems: [{ img: F1 }, { img: F2 }, { img: F3 }, { img: F4 }, { img: F5 }], // 快捷入口图标
         };
     },
     methods: {
+        /**
+         * 切换悬浮菜单展开状态
+         */
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
             this.animateIcons();
             this.animateMenuWidth();
         },
+        /**
+         * 根据展开状态播放快捷入口位移动画
+         */
         animateIcons() {
             this.menuItems.forEach((_, index) => {
                 const el = this.$refs["icon" + index][0];
@@ -75,6 +82,9 @@ export default {
                 }
             });
         },
+        /**
+         * 根据快捷入口数量调整悬浮菜单宽度
+         */
         animateMenuWidth() {
             const iconCount = this.menuItems.length;
             const iconWidth = 110;
@@ -91,11 +101,19 @@ export default {
                 ease: "power2.out",
             });
         },
+        /**
+         * 开始拖拽时记录触摸点与菜单位置的偏移量
+         * @param {TouchEvent} e 触摸事件
+         */
         startDrag(e) {
             this.dragging = true;
             this.startX = e.touches[0].clientX - this.position.x;
             this.startY = e.touches[0].clientY - this.position.y;
         },
+        /**
+         * 拖拽过程中限制菜单始终停留在可视区域内
+         * @param {TouchEvent} e 触摸事件
+         */
         onDrag(e) {
             if (!this.dragging) return;
 
@@ -112,7 +130,7 @@ export default {
             const offsetX = touch.clientX - this.startX;
             const offsetY = touch.clientY - this.startY;
 
-            // 限制范围（最小边界 10px）
+            // 限制拖拽范围，避免悬浮菜单被拖出屏幕后无法点击
             const minX = 10;
             const minY = 10;
             const maxX = screenWidth - menuWidth - 10;
@@ -121,6 +139,9 @@ export default {
             this.position.x = Math.min(Math.max(offsetX, minX), maxX);
             this.position.y = Math.min(Math.max(offsetY, minY), maxY);
         },
+        /**
+         * 结束拖拽并恢复点击状态
+         */
         endDrag() {
             this.dragging = false;
         },
@@ -129,47 +150,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.floating-menu {
-    background-color: rgba(0, 0, 0, 0.8);;
-    border-radius: 65px;
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    height: 110px;
-    width: 110px;
-    touch-action: none;
-}
-
-.avatar-wrapper {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* 悬浮菜单展开动画需要 GSAP 写入 transform，保留初始变换避免动画起点抖动 */
 .icon-wrapper {
-    margin-left: 8px;
     backdrop-filter: blur(6px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
     transform: translateX(0);
-    color: white;
-    font-size: 20px;
-
-    img {
-        width: 60px;
-        height: 60px;
-    }
 }
 </style>

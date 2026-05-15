@@ -1,45 +1,27 @@
+/* 图片符号容器：保留旧 class 入口，主体盒模型由 Tailwind 工具类实现 */
 .single-images-list {
-    overflow: hidden;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: #14142b;
+    @apply overflow-hidden rounded-[10px] border border-solid bg-jili-panel;
 
     .single-images-contain {
-        margin: 0 5px 5px 5px;
-        padding: 2px;
+        @apply mx-[5px] mb-[5px] p-0.5;
     }
 
     .single-images-title {
-        background-color: #14142b;
-        word-wrap: break-word;
-        box-sizing: border-box;
-        color: #7e7e7e;
-        padding: 10px 0 10px 5px;
-        font-size: 16px;
+        @apply box-border break-words bg-jili-panel py-2.5 pl-[5px] text-base text-jili-muted;
     }
 
     .single-images-middle {
-        display: grid;
+        @apply grid items-start;
         grid-auto-flow: column;
-        align-items: start; /* 顶部对齐 */
         background-color: #f2dcdb;
         padding: 4px;
         position: relative;
 
         .single-images-middle-div-new {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            @apply relative flex h-full flex-col;
 
             .single-images-back-div {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                box-sizing: border-box;
+                @apply relative box-border flex h-full items-center justify-center;
             }
 
             .single-images-back-active:nth-child(4n + 1) {
@@ -91,21 +73,11 @@
             }
 
             .single-images-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background: #000;
-                opacity: 0.7;
+                @apply absolute inset-0 h-full w-full bg-black opacity-70;
             }
 
             img {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: cover;
-                box-sizing: border-box;
+                @apply box-border block h-auto w-full object-cover;
             }
         }
     }

@@ -1,231 +1,182 @@
+/* 历史记录页面：保留旧 class 入口，内部统一使用 Tailwind 工具类实现布局、间距和颜色 */
 .history-container {
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-    padding: 16px;
+    @apply overflow-auto rounded-[5px] bg-jili-dark p-4;
     height: calc(100vh - 215px);
-    overflow: auto;
-    background-color: #24263a;
-    border-radius: 5px;
-
-    .history-content {
-        display: flex;
-        align-items: center;
-        display: flex;
-        align-items: center;
-
-        .history-title {
-            font-size: 20px;
-            color: #fcc40d;
-            font-weight: 600;
-        }
-
-        span {
-            font-size: 20px;
-            color: #7e7e7e;
-            padding: 0 5px;
-        }
-
-        .history-title-sub {
-            font-size: 20px;
-            color: #fff;
-        }
-    }
-
-    .history-content-data {
-        margin-top: 10px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-
-        .empty {
-            padding: 30px 0;
-            font-size: 20px;
-            color: rgba(115, 115, 115, var(--tw-text-opacity));
-        }
-    }
-
-    .history-form {
-        margin: 10px 0 20px 0;
-
-        .history-row {
-            line-height: 40px;
-            display: flex;
-            align-items: start;
-            flex-direction: column;
-
-            span {
-                color: #7e7e7e;
-                font-size: 20px;
-                font-weight: 600;
-            }
-        }
-
-        .history-search {
-            display: flex;
-            gap: 10px;
-            width: 100%;
-
-            .active {
-                border-width: 1px;
-                border-style: solid;
-                background: #fcc40d;
-                color: #fff !important;
-                color: rgba(255, 255, 255, var(--tw-text-opacity));
-            }
-
-            .history-search-item {
-                flex: 1;
-                font-size: 20px;
-                font-weight: 700;
-                color: #737373;
-                border: 1px solid rgba(115, 115, 115);
-                border-radius: 10px;
-                cursor: pointer;
-                text-align: center;
-
-                span {
-                    font-size: 20px;
-                }
-            }
-        }
-
-        .history-row-bottom {
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-    }
-
-    .history-btn {
-        width: 70%;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 20px;
-        border-radius: 10px;
-        color: #fff;
-        background: #fcc40d;
-        font-weight: 700;
-        margin: 20px auto;
-    }
-
-    .green {
-        color: rgba(16, 185, 129, var(--tw-text-opacity));
-    }
-    .red {
-        color: rgba(239, 68, 68, var(--tw-text-opacity));
-    }
-
-    .history-data {
-        width: 100%;
-    }
-
-    .div-table-cell {
-        padding: 10px 0 !important;
-    }
 }
 
-.div-table-portrait {
-    --tw-bg-opacity: 1;
-    display: flex;
-    flex-direction: row;
-    border-top-right-radius: 10px;
-    margin-bottom: 6px;
-
-    .div-table-cell-portrait {
-        flex: 1;
-        text-align: center;
-        color: #fff;
-        border-bottom: 2px solid #24263a;
-        font-size: 16px;
-        background-color: #14142b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 55px;
-    }
-
-    .div-table-header-portrait {
-        flex: 1.5;
-
-        .div-table-cell-portrait {
-            background-color: #343542;
-        }
-
-        .div-table-cell-portrait:first-child {
-            border-top-left-radius: 10px;
-        }
-
-        .div-table-cell-portrait:last-child {
-            border-bottom-left-radius: 10px !important;
-        }
-    }
-
-    .div-table-content-portrait {
-        flex: 2;
-        .div-table-cell-portrait {
-            min-height: 55px;
-            font-size: 16px !important;
-        }
-        .div-table-cell-portrait:first-child {
-            border-top-right-radius: 10px;
-        }
-
-        .div-table-cell-portrait:last-child {
-            border-bottom-right-radius: 10px !important;
-        }
-    }
+/* 顶部面包屑标题区域 */
+.history-container .history-content {
+    @apply flex items-center;
 }
 
-.portrait-history {
-    .history-content-data {
-        padding-left: 0;
-    }
-
-    .empty {
-        padding: 16px 0 !important;
-        text-align: center;
-    }
+.history-container .history-title {
+    @apply text-xl font-semibold text-jili-gold;
 }
 
+.history-container .history-content span {
+    @apply px-[5px] text-xl text-jili-muted;
+}
+
+.history-container .history-title-sub {
+    @apply text-xl text-white;
+}
+
+/* 筛选表单区域，移动端纵向排列保证输入和按钮可点击 */
+.history-container .history-form {
+    @apply my-2.5 mb-5;
+}
+
+.history-container .history-row {
+    @apply flex flex-col items-start leading-10;
+}
+
+.history-container .history-row > span {
+    @apply text-xl font-semibold text-jili-muted;
+}
+
+.history-container .history-search {
+    @apply flex w-full gap-2.5;
+}
+
+.history-container .history-search-item {
+    @apply flex-1 cursor-pointer rounded-[10px] border border-solid border-[#737373] text-center text-xl font-bold text-[#737373];
+}
+
+.history-container .history-search .active {
+    @apply border border-solid bg-jili-gold text-white;
+}
+
+.history-container .history-row-bottom {
+    @apply flex w-full items-center;
+}
+
+/* 历史数据列表区域 */
+.history-container .history-content-data {
+    @apply mt-2.5 flex flex-col items-center justify-center rounded-[5px] pl-0;
+}
+
+.history-container .history-data {
+    @apply w-full;
+}
+
+.history-container .empty {
+    @apply py-[30px] text-center text-xl text-[#737373];
+}
+
+.history-container .history-btn {
+    @apply mx-auto my-5 w-[70%] rounded-[10px] bg-jili-gold py-2.5 text-center text-xl font-bold text-white;
+}
+
+.history-container .green {
+    @apply text-green-500;
+}
+
+.history-container .red {
+    @apply text-red-500;
+}
+
+/* 横屏表格结构：保留 div-table 语义，使用 Tailwind 统一尺寸和对齐 */
+.history-container .div-table {
+    @apply w-full;
+    display: table;
+}
+
+.history-container .div-table-row {
+    @apply mb-[3px] flex flex-1 bg-jili-panel;
+}
+
+.history-container .div-table-cell {
+    @apply box-border flex flex-1 flex-col items-center justify-center break-all py-2.5 text-center align-middle text-sm text-white md:text-lg;
+}
+
+.history-container .div-table-header {
+    @apply rounded-[10px];
+}
+
+.history-container .div-table-header .div-table-cell {
+    @apply bg-[#343542] text-center text-lg text-white md:text-xl;
+    border-right: 4px solid #24263a;
+}
+
+.history-container .div-table-header .div-table-cell:last-child {
+    border-right: none;
+}
+
+.history-container .div-table-cell:first-child {
+    @apply rounded-tl-[10px];
+}
+
+.history-container .div-table-cell:last-child {
+    @apply rounded-tr-[10px];
+}
+
+/* 竖屏卡片表格结构：小屏改为左右两列，避免横向滚动 */
+.history-container .div-table-portrait {
+    @apply mb-1.5 flex flex-row rounded-tr-[10px];
+}
+
+.history-container .div-table-row-portrait {
+    @apply flex flex-col;
+}
+
+.history-container .div-table-header-portrait {
+    flex: 1.5;
+}
+
+.history-container .div-table-content-portrait {
+    flex: 2;
+}
+
+.history-container .div-table-cell-portrait {
+    @apply flex min-h-[45px] flex-1 items-center justify-center border-b-2 border-jili-dark bg-jili-panel text-center text-base text-white;
+}
+
+.history-container .div-table-header-portrait .div-table-cell-portrait {
+    @apply bg-[#343542];
+}
+
+.history-container .div-table-header-portrait .div-table-cell-portrait:first-child {
+    @apply rounded-tl-[5px];
+}
+
+.history-container .div-table-header-portrait .div-table-cell-portrait:last-child {
+    border-bottom-left-radius: 5px !important;
+}
+
+.history-container .div-table-content-portrait .div-table-cell-portrait:first-child {
+    @apply rounded-tr-[5px];
+}
+
+.history-container .div-table-content-portrait .div-table-cell-portrait:last-child {
+    border-bottom-right-radius: 5px !important;
+}
+
+/* Element / Vant 表单控件为第三方内部节点，需要保留深度选择器覆盖 */
 ::v-deep .el-input__prefix {
     display: none;
 }
+
 ::v-deep .van-button--default {
-    --tw-text-opacity: 1;
-    color: #7e7e7e;
-    border-color: #6b7280;
-    background-color: transparent;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding: 0 10px;
+    @apply ml-2.5 rounded-[10px] border-gray-500 bg-transparent px-2.5 text-jili-muted;
 }
 
 ::v-deep .van-button__content {
-    font-size: 20px;
+    @apply text-xl;
 }
+
 ::v-deep .van-button {
-    height: 40px;
+    @apply h-10;
 }
+
 ::v-deep .van-icon-search:before {
-    font-weight: 700;
+    @apply font-bold;
 }
+
 ::v-deep .el-input__inner {
-    padding: 0 10px;
-    font-size: 20px;
-    background-color: #24263a !important;
-    border-color: #6b7280 !important;
-    border-radius: 10px !important;
-    height: 40px;
+    @apply h-10 rounded-[10px] border-gray-500 bg-jili-dark px-2.5 text-xl;
     line-height: 1px;
 }
+
 ::v-deep .van-list__finished-text {
-    font-size: 20px;
-    font-weight: 700;
-    color: #737373;
-    line-height: 40px;
-    padding-bottom: 10px;
+    @apply pb-2.5 text-xl font-bold leading-10 text-[#737373];
 }

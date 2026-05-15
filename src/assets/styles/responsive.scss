@@ -1,175 +1,80 @@
-// 响应式断点定义
-$breakpoints: (
-    "xs": 320px,
-    // 超小屏幕
-    "sm": 576px,
-    // 小屏幕
-    "md": 768px,
-    // 中等屏幕
-    "lg": 992px,
-    // 大屏幕
-    "xl": 1200px,
-    // 超大屏幕
-    "xxl": 1920px // 超超大屏幕,
-);
-
-// 媒体查询混入
-@mixin respond-to($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (min-width: map-get($breakpoints, $breakpoint)) {
-            @content;
-        }
-    } @else {
-        @warn "未知的断点: #{$breakpoint}";
-    }
-}
-
-// 移动端优先的媒体查询
-@mixin mobile-first($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
-            @content;
-        }
-    } @else {
-        @warn "未知的断点: #{$breakpoint}";
-    }
-}
-
-// 设备类型检测
-@mixin mobile {
-    @media (max-width: 767px) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media (min-width: 768px) and (max-width: 1023px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: 1024px) {
-        @content;
-    }
-}
-
-// 横屏和竖屏
-@mixin landscape {
-    @media (orientation: landscape) {
-        @content;
-    }
-}
-
-@mixin portrait {
-    @media (orientation: portrait) {
-        @content;
-    }
-}
-
-// 高分辨率屏幕
-@mixin retina {
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        @content;
-    }
-}
-
-// 通用响应式容器
+/* 响应式容器工具类：兼容旧模板 class，内部统一由 Tailwind 工具类实现 */
 .responsive-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+    @apply mx-auto w-full px-2.5;
+}
 
-    @include mobile {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    @include tablet {
+@screen md {
+    .responsive-container {
+        @apply px-5;
         max-width: 750px;
-        padding: 0 20px;
     }
+}
 
-    @include desktop {
+@screen lg {
+    .responsive-container {
         max-width: 1200px;
-        padding: 0 30px;
+        padding-right: 30px;
+        padding-left: 30px;
     }
 }
 
-// 响应式字体大小
+/* 响应式文字工具类：保留旧 class 入口，按屏幕宽度调整字号 */
 .responsive-text {
-    font-size: 14px;
-
-    @include mobile {
-        font-size: 12px;
-    }
-
-    @include tablet {
-        font-size: 14px;
-    }
-
-    @include desktop {
-        font-size: 16px;
-    }
+    @apply text-xs md:text-sm lg:text-base;
 }
 
-// 响应式间距
+/* 响应式间距工具类：保留旧 class 入口，移动端优先设置紧凑间距 */
 .responsive-spacing {
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
+}
 
-    @include mobile {
-        margin: 5px;
-        padding: 5px;
-    }
-
-    @include tablet {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    @include desktop {
-        margin: 20px;
-        padding: 20px;
+@screen md {
+    .responsive-spacing {
+        @apply m-2.5 p-2.5;
     }
 }
 
-// 隐藏/显示工具类
+@screen lg {
+    .responsive-spacing {
+        @apply m-5 p-5;
+    }
+}
+
+/* 旧隐藏工具类：保留给已有模板使用，规则改为 Tailwind 响应式语义 */
 .hide-mobile {
-    @include mobile {
+    @apply hidden md:block;
+}
+
+/* 平板隐藏需要限定中等屏区间，Tailwind 单个工具类无法表达闭区间，保留媒体查询 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hide-tablet {
         display: none !important;
     }
 }
 
-.hide-tablet {
-    @include tablet {
-        display: none !important;
-    }
-}
-
+/* 桌面隐藏工具类：保留旧 class 入口 */
 .hide-desktop {
-    @include desktop {
-        display: none !important;
-    }
+    @apply lg:hidden;
 }
 
+/* 移动端显示工具类：保留旧 class 入口 */
 .show-mobile {
-    display: none !important;
-    @include mobile {
-        display: block !important;
-    }
+    @apply block md:hidden;
 }
 
+/* 平板显示需要限定中等屏区间，Tailwind 单个工具类无法表达闭区间，保留媒体查询 */
 .show-tablet {
     display: none !important;
-    @include tablet {
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .show-tablet {
         display: block !important;
     }
 }
 
+/* 桌面显示工具类：保留旧 class 入口 */
 .show-desktop {
-    display: none !important;
-    @include desktop {
-        display: block !important;
-    }
+    @apply hidden lg:block;
 }

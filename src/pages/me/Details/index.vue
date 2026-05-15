@@ -35,8 +35,7 @@
                         type="date"
                         size="mini"
                         placeholder=""
-                        :picker-options="pickerOptions"
-                        style="width: 100% !important"
+                        :picker-options="pickerOptions" class="w-full"
                         value-format="yyyy-MM-dd"
                         :popper-class="popperClass"
                         :key="popperClass"
@@ -68,19 +67,19 @@
                         >
                             <div class="div-table">
                                 <div class="div-table-row div-table-header">
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ $t("i18_SpecialAward") }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 230px">
+                                    <div class="div-table-cell max-w-[230px]">
                                         {{ $t("i18_RoundNumber") }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ $t("i18_NetWorth") }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ $t("i18_NiuNiuAnte") }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ $t("i18_Result_Win") }}
                                     </div>
                                     <div class="div-table-cell">{{ $t("i18_Time") }}</div>
@@ -91,19 +90,19 @@
                                     :key="index"
                                     @click="onRowClick(item)"
                                 >
-                                    <div class="div-table-cell" style="max-width: 140px">-</div>
-                                    <div class="div-table-cell" style="max-width: 230px">
+                                    <div class="div-table-cell max-w-[140px]">-</div>
+                                    <div class="div-table-cell max-w-[230px]">
                                         {{ item.RoundIndex }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         <span :class="[item.NetValue * 1 > 0 ? 'green' : 'red']">{{
                                             item.NetValue
                                         }}</span>
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ item.Bet }}
                                     </div>
-                                    <div class="div-table-cell" style="max-width: 140px">
+                                    <div class="div-table-cell max-w-[140px]">
                                         {{ item.Win }}
                                     </div>
                                     <div class="div-table-cell">

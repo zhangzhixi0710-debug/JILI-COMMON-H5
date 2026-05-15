@@ -1,315 +1,69 @@
+/* 单局详情页面：保留旧 class 入口，内部统一使用 Tailwind 工具类实现 */
 .single-container {
-    padding: 16px;
-    overflow: auto;
-    background: #24263a;
-    border-radius: 5px;
+    @apply overflow-auto rounded-[10px] bg-jili-dark p-2.5;
 }
 
-.single-btn {
-    width: 70%;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    
-    font-size: 24px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    color: #fff;
-    background: #626263;
-    font-weight: 700;
+/* 返回按钮区域 */
+.single-container .single-btn {
+    @apply mx-auto my-5 w-[70%] rounded-[10px] bg-[#626263] py-2.5 text-center text-xl font-bold text-white;
 }
 
-.history-content-data {
-    margin-top: 30px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    .empty {
-        padding: 30px 0;
-        font-size: 30px;
-        color: rgba(115, 115, 115, var(--tw-text-opacity));
-    }
-}
-
-.history-data {
-    width: 100%;
-}
-
-.single-footer-text {
-    color: #737373;
-    padding-top: 20px;
-    font-size: 24px;
-}
-.single-table-sort {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #7e7e7e;
-    padding: 10px 16px;
-    border-radius: 10px;
-}
-
-.div-table {
-    display: table;
-    width: 100%;
-    /* 移除 border-collapse，因为无边框 */
-}
-
-.div-table-row {
-    flex: 1;
-    display: table-row;
-    display: flex;
-    background-color: #14142b;
-    margin-bottom: 3px;
-}
-
-.div-table-cell {
-    padding: 10px 0 !important;
-    flex: 1;
-    word-break: break-all;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 18px;
-
-    img {
-        width: 55px;
-        height: 55px;
-    }
-}
-
-.div-table-header {
-    border-radius: 10px;
-}
-
-.div-table-header .div-table-cell {
-    flex: 1;
-    background-color: #343542; /* 可选：表头背景色 */
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.history-content-data {
-    padding-left: 0;
-}
-.empty {
-    text-align: center;
-}
-
-.div-table-cell:first-child {
-    border-top-left-radius: 10px;
-    width: 100px;
-}
-
-.div-table-cell:last-child {
-    border-top-right-radius: 10px;
-}
-
-.green {
+/* 金额正负状态颜色，包含 v-html 内部 span 的颜色继承 */
+.single-container .green,
+.single-container .green span {
     color: #10b981 !important;
 }
-.red {
+
+.single-container .red,
+.single-container .red span {
     color: #ef4444 !important;
 }
 
-.single-footer-data {
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    span {
-        color: #999;
-        font-size: 32px;
-        font-family: "微軟正黑體", Helvetica, Arial, PingFangTC-Light, STHeitiTC-Light,
-            "Microsoft JhengHei", sans-serif;
-        font-weight: 700;
-    }
+.single-container .yellow span {
+    color: #fcc40d !important;
 }
 
-.single-detail {
-    width: 100%;
-    border-radius: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px 0;
-
-    .single-detail-cell-name {
-        color: #fcc40d !important;
-    }
-
-    .single-detail-cell {
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        overflow: hidden;
-        color: #999;
-        background: #14142b;
-    }
-
-    .single-detail-cell > div:first-child {
-        word-wrap: break-word;
-        box-sizing: border-box;
-        color: #7e7e7e;
-        padding-left: 10px;
-        padding-top: 5px;
-        font-size: 18px;
-    }
-
-    .single-detail-cell > div:last-child {
-        word-break: break-all;
-        text-align: center;
-        padding: 12px 0;
-        color: #999;
-        font-size: 16px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
+/* 详情分组标题 */
+.single-container .single-footer-data {
+    @apply text-xl font-bold leading-[50px] text-[#999999];
 }
 
-.landscape-single {
-    width: 100%;
-    height: calc(100% - 55px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* 两列详情网格，移动端保持可读间距，横屏由父级布局扩展宽度 */
+.single-container .single-detail {
+    @apply grid w-full grid-cols-2 gap-2.5 rounded-[10px];
 }
 
-.portrait-single {
-    height: calc(100% - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* 单列详情网格，兼容部分游戏只展示一组记录的页面 */
+.single-container .single-detail-two {
+    @apply grid w-full grid-cols-1 gap-2.5 rounded-[10px];
 }
 
-.single-images {
-    width: 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-bottom: 0;
-    margin-top: 1rem;
-    width: 100%;
-    gap: 14px;
-    display: grid;
+.single-container .single-detail-cell-name {
+    color: #fcc40d !important;
 }
 
-.portrait-content {
-    width: 100%;
-
-    .single-detail {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .single-detail-cell:first-child > div:last-child {
-        color: #fcc40d;
-    }
+.single-container .single-detail-cell {
+    @apply flex flex-col overflow-hidden rounded-[10px] bg-jili-panel text-[#999999];
 }
 
-.portrait-single {
-    .history-content-data {
-        padding-left: 0;
-    }
-
-    .empty {
-        padding: 16px 0 !important;
-        text-align: center;
-    }
+.single-container .single-detail-cell > div:first-child {
+    @apply box-border break-words pl-2.5 pt-2.5 text-lg text-jili-muted;
 }
 
-.landscape-single {
-    height: calc(100% - 55px);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .history-content,
-    .history-form,
-    .history-content-data {
-        max-width: 1200px;
-        width: 100%;
-    }
-
-    .history-content {
-        padding: 10px;
-    }
+.single-container .single-detail-cell > div:last-child {
+    @apply flex h-full items-center justify-center break-all text-center text-base font-bold text-[#999999];
 }
 
-.div-table-portrait {
-    --tw-bg-opacity: 1;
-    display: flex;
-    flex-direction: row;
-    border-top-right-radius: 10px;
-    margin-bottom: 10px;
+.single-container .single-detail-cell > div:last-child span {
+    @apply flex items-center justify-center break-all py-2.5 text-center text-base font-bold text-[#999999];
+}
 
-    .div-table-cell-portrait {
-        border-bottom: 5px solid #24263a;
-        background-color: #14142b;
-        height: 55px;
+/* 图片详情列表，两列展示以兼顾手机端宽度和横屏信息密度 */
+.single-container .single-images {
+    @apply grid w-full grid-cols-2 gap-[14px];
+}
 
-        padding: 10px 0 !important;
-        flex: 1;
-        word-break: break-all;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 18px;
-    }
-
-    img {
-        width: 45px;
-        height: 45px;
-    }
-
-    .div-table-header-portrait {
-        flex: 1.5;
-
-        .div-table-cell-portrait {
-            background-color: #343542;
-        }
-
-        .div-table-cell-portrait:first-child {
-            border-top-left-radius: 10px;
-        }
-
-        .div-table-cell-portrait:last-child {
-            border-bottom-left-radius: 10px !important;
-        }
-    }
-
-    .div-table-content-portrait {
-        flex: 2;
-        .div-table-cell-portrait {
-            min-height: 55px;
-            font-size: 18px !important;
-        }
-        .div-table-cell-portrait:first-child {
-            border-top-right-radius: 10px;
-        }
-
-        .div-table-cell-portrait:last-child {
-            border-bottom-right-radius: 10px !important;
-        }
-    }
+/* 单列图片详情列表，兼容特殊游戏详情结构 */
+.single-container .single-images-two {
+    @apply grid w-full grid-cols-1 gap-[14px];
 }

@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
-        <DynamicLayout style="height: 100%" />
+    <!-- 应用根布局 -->
+    <div id="app" class="relative h-full w-full overflow-x-hidden">
+        <DynamicLayout class="h-full" />
     </div>
 </template>
 
@@ -15,6 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
+/* 全局基础样式用于统一根节点高度、字体和滚动条兼容，Tailwind Preflight 已关闭以避免影响既有组件 */
 html,
 body {
     margin: 0;
@@ -29,12 +31,9 @@ body {
 }
 
 #app {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow-x: hidden;
 }
 
+/* 全局隐藏滚动条，兼容移动端嵌入 WebView 的历史页面滚动体验 */
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -45,5 +44,4 @@ body {
     scrollbar-width: none;
     box-sizing: border-box;
 }
-
 </style>

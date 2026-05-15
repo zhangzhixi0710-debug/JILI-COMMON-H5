@@ -1,5 +1,6 @@
 <template>
-    <div :class="[isPc ? 'main-pc' : '', isPhone ? 'main-mobile' : '']">
+    <!-- 根据屏幕方向切换移动端和电脑端布局容器 -->
+    <div class="h-full w-full overflow-x-hidden" :class="[isPc ? 'main-pc' : '', isPhone ? 'main-mobile' : '']">
         <Index v-bind="layoutProps" :initGameId="initGameId">
             <router-view />
         </Index>
@@ -21,9 +22,9 @@ export default {
     },
     data() {
         return {
-            initGameId: "",
-            isPhone: false,
-            isPc: false,
+            initGameId: "", // 初始游戏 ID
+            isPhone: false, // 是否为竖屏移动端布局
+            isPc: false, // 是否为横屏电脑端布局
         };
     },
     watch: {
@@ -42,14 +43,23 @@ export default {
             return {};
         },
     },
+    /**
+     * 页面初始化时计算屏幕方向并监听窗口变化
+     */
     mounted() {
         this.updateScreenInfo();
         window.addEventListener("resize", this.updateScreenInfo);
     },
+    /**
+     * 组件销毁时移除窗口监听，避免重复绑定
+     */
     beforeDestroy() {
         window.removeEventListener("resize", this.updateScreenInfo);
     },
     methods: {
+        /**
+         * 根据窗口宽高判断当前使用移动端或电脑端布局
+         */
         async updateScreenInfo() {
             if (window.innerWidth <= window.innerHeight) {
                 this.isPhone = true;
@@ -64,6 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
+/* 横屏电脑端需要覆盖多个子组件和 Vant 内部结构，保留全局选择器以维持跨组件布局联动 */
 .main-pc {
     height: 100%;
 

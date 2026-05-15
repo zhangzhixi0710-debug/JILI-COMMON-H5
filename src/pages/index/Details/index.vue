@@ -1,5 +1,5 @@
 <template>
-    <div class="game-layout">
+    <div class="game-layout h-full w-full">
         <Content
             :gameId="gameId"
             :config="detailConfig"
@@ -42,9 +42,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.game-layout {
-    height: 100%;
-    width: 100%;
-}
-</style>
+
