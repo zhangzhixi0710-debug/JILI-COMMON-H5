@@ -65,193 +65,147 @@ export default {
 
 <style lang="scss">
 .main-pc {
-    height: 100%;
+    @apply tw-u-2d30943fe6;
 
     .header {
-        height: 68px;
+        @apply tw-u-79eb92eb56;
         .header-left-img {
-            width: 40px;
+            @apply tw-u-274c99d445;
         }
         .header-right-img {
-            width: 40px;
-            margin-left: 0 !important;
+            @apply tw-u-e6a72398c2;
         }
         .header-right {
-            line-height: 16px;
+            @apply tw-u-deadd5b07f;
         }
         .header-right span {
-            font-size: 14px;
+            @apply tw-u-1c639f0d4c;
         }
         .header-img {
-            margin-left: 30px;
+            @apply tw-u-91859afed2;
         }
     }
 
     .content {
-        width: calc(100% - 32px);
-        margin: 0 auto;
+        @apply tw-u-2c7c7d5fef;
     }
 
     .main {
-        height: calc(100% - 68px);
-        width: calc(100% - 110px);
-        margin-left: 110px;
-        margin-top: 125px;
+        @apply tw-u-044687af44;
     }
 
     .history-container {
-        height: inherit !important;
+        @apply tw-u-4d6ad78989;
     }
 
     .banner-swiper {
-        border-radius: 5px;
-        height: 300px !important;
-        margin-bottom: 15px !important;
+        @apply tw-u-fb5a49005f;
     }
 
     .swiper-button-next {
-        height: 50px;
-        width: 50px;
+        @apply tw-u-3289aa76ae;
     }
     .swiper-button-prev {
-        height: 50px;
-        width: 50px;
+        @apply tw-u-3289aa76ae;
     }
 
     .swiper-container {
-        border-radius: 7px;
+        @apply tw-u-ab7825c746;
     }
 
     .van-tabbar {
-        position: absolute;
-        bottom: inherit;
-        left: 0;
-        top: 82px;
-        right: inherit;
-        height: calc(100% - 82px);
-        width: 110px;
-        border-top-right-radius: 7px;
+        @apply tw-u-9ecfe153fb;
     }
 
     .image-item {
-        width: calc((100% - 82px) / 5) !important; /* 两个间距共40px */
+        @apply tw-u-7fda3031f8; /* 两个间距共40px */
         // min-height: 160px !important;
-        margin-right: 20px !important;
-        margin-bottom: 10px !important;
     }
 
     .image-item:nth-child(5n) {
-        margin-right: 0 !important;
+        @apply tw-u-68ad83dced;
     }
 
     .single-images {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        @apply tw-u-f5767e4d31;
     }
 
     .text-main {
-        width: calc(100% - 130px) !important;
-        top: 82px !important;
-        height: 30px !important;
-        left: 120px;
+        @apply tw-u-f65525757d;
 
         .vertical-text {
-            width: calc(100% - 10px) !important;
-            height: 30px !important;
-            border-radius: 7px !important;
+            @apply tw-u-170b3d5eba;
         }
 
         .vertical-swiper {
-            height: 30px !important;
-            overflow: hidden;
-            position: relative;
+            @apply tw-u-a7710472af;
         }
     }
 
     ::v-deep(.vertical-text .swiper-container-vertical) {
-        height: 30px;
+        @apply tw-u-0dc08e8c23;
     }
 
     ::v-deep(.vertical-text .swiper-slide) {
-        height: 30px;
-        line-height: 30px;
+        @apply tw-u-f32a783bfd;
     }
 
     .notice-item {
-        text-align: left !important;
-        padding-left: 10px;
-        color: #fff;
-        line-height: 30px;
-        text-align: center;
-        font-size: 14px;
-        height: 30px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        @apply tw-u-1b22a12179;
     }
 
     .van-tabbar-item__text {
-        margin-top: 10px;
+        @apply tw-u-8ced3aadb7;
     }
 
     .van-tabbar-item img {
-        width: 45px !important;
-        height: 45px;
+        @apply tw-u-1f51dbd5ee;
     }
 
     .tabbar-font {
-        font-size: 22px !important;
+        @apply tw-u-9efe9252d4;
     }
 
     .footer {
-        padding: 15px 0 20px 0 !important;
+        @apply tw-u-5fdba5823f;
     }
 
     .footer-search {
-        margin: 0 20px !important;
+        @apply tw-u-44fd6743be;
     }
 
     .footer-data {
-        padding: 0 20px !important;
+        @apply tw-u-348512b955;
     }
 
     .search-title-div {
-        height: 40px !important;
-        line-height: 40px !important;
-        padding-left: 15px !important;
+        @apply tw-u-1b279c8450;
 
         span {
-            font-size: 18px;
+            @apply tw-u-276eb226e0;
         }
 
         span:last-child {
-            font-size: 18px !important;
+            @apply tw-u-ec94adf6e2;
         }
     }
     .search-input {
-        height: 40px !important;
-        line-height: 40px !important;
-        font-size: 18px !important;
+        @apply tw-u-a6f658cf29;
     }
     .search-input::placeholder {
-        font-size: 18px !important;
+        @apply tw-u-ec94adf6e2;
     }
     .search-icon {
-        height: 40px !important;
-        line-height: 40px !important;
-        border-radius: 7px !important;
-        padding: 6px !important;
+        @apply tw-u-d3340657de;
     }
     .footer-search-input {
-        border-radius: 7px !important;
-        margin-right: 15px !important;
+        @apply tw-u-8aefe035c3;
     }
     .footer-data-title {
-        height: 70px !important;
-        line-height: 70px !important;
-        font-size: 26px !important;
+        @apply tw-u-c444971b54;
     }
 }
 .main-mobile {
-    height: 100%;
+    @apply tw-u-2d30943fe6;
 }
 </style>

@@ -1,234 +1,145 @@
 .history-container {
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-    padding: 16px;
-    height: calc(100vh - 215px);
-    overflow: auto;
-    background-color: #24263a;
-    border-radius: 5px;
+    @apply tw-u-8275dd5b33;
 
     .history-content {
-        display: flex;
-        align-items: center;
-        display: flex;
-        align-items: center;
+        @apply tw-u-79d3d2d24b;
 
         .history-title {
-            font-size: 20px;
-            color: #fcc40d;
-            font-weight: 600;
+            @apply tw-u-f08d70e805;
         }
 
         span {
-            font-size: 20px;
-            color: #7e7e7e;
-            padding: 0 5px;
+            @apply tw-u-22d0c16839;
         }
 
         .history-title-sub {
-            font-size: 20px;
-            color: #fff;
+            @apply tw-u-ee8447485c;
         }
     }
 
     .history-content-data {
-        margin-top: 10px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        @apply tw-u-d71e9356d8;
 
         .empty {
-            padding: 30px 0;
-            font-size: 20px;
-            color: rgba(115, 115, 115, var(--tw-text-opacity));
+            @apply tw-u-be1172b4b9;
         }
     }
 
     .history-form {
-        margin: 10px 0 20px 0;
+        @apply tw-u-b9c2a8f07f;
 
         .history-row {
-            line-height: 40px;
-            display: flex;
-            align-items: start;
-            flex-direction: column;
+            @apply tw-u-fe848f8900;
 
             span {
-                color: #7e7e7e;
-                font-size: 20px;
-                font-weight: 600;
+                @apply tw-u-13d51123c4;
             }
         }
 
         .history-search {
-            display: flex;
-            gap: 10px;
-            width: 100%;
+            @apply tw-u-00e891bfd9;
 
             .active {
-                border-width: 1px;
-                border-style: solid;
-                background: #fcc40d;
-                color: #fff !important;
-                color: rgba(255, 255, 255, var(--tw-text-opacity));
+                @apply tw-u-ba45ec906b;
             }
 
             .history-search-item {
-                flex: 1;
-                font-size: 20px;
-                font-weight: 700;
-                color: #737373;
-                border: 1px solid rgba(115, 115, 115);
-                border-radius: 10px;
-                cursor: pointer;
-                text-align: center;
+                @apply tw-u-5b137f3baf;
 
                 span {
-                    font-size: 20px;
+                    @apply tw-u-e23c64af2b;
                 }
             }
         }
 
         .history-row-bottom {
-            display: flex;
-            align-items: center;
-            width: 100%;
+            @apply tw-u-1c4a4fa436;
         }
     }
 
     .history-btn {
-        width: 70%;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 20px;
-        border-radius: 10px;
-        color: #fff;
-        background: #fcc40d;
-        font-weight: 700;
-        margin: 20px auto;
+        @apply tw-u-64708b973a;
     }
 
     .green {
-        color: rgba(16, 185, 129, var(--tw-text-opacity));
+        @apply tw-u-ff0344b3d7;
     }
     .red {
-        color: rgba(239, 68, 68, var(--tw-text-opacity));
+        @apply tw-u-9edd0f80e8;
     }
 
     .history-data {
-        width: 100%;
+        @apply tw-u-be70d99ed5;
     }
 
     .div-table-cell {
-        padding: 10px 0 !important;
+        @apply tw-u-8b043c4eb0;
     }
 
     .div-table {
-        display: table;
-        width: 100%;
+        @apply tw-u-e6c954f00b;
         /* 移除 border-collapse，因为无边框 */
     }
 
     .div-table-row {
-        flex: 1;
-        display: table-row;
-        display: flex;
-        background-color: #14142b;
-        margin-bottom: 3px;
+        @apply tw-u-ad8e1ddf57;
     }
 
     .div-table-cell {
-        flex: 1;
-        word-break: break-all;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 18px;
-        box-sizing: border-box;
+        @apply tw-u-2aa9427e3c;
     }
 
     .div-table-header {
-        border-radius: 10px;
+        @apply tw-u-539fe0166f;
     }
 
     .div-table-header .div-table-cell {
-        flex: 1;
-        background-color: #343542; /* 可选：表头背景色 */
-        color: #fff;
-        font-size: 20px;
-        text-align: center;
-        vertical-align: middle;
-        box-sizing: border-box;
+        @apply tw-u-b131ae0817; /* 可选：表头背景色 */
 
         // 为所有表头div添加右边框，创建统一的间隔
-        border-right: 4px solid #24263a;
 
         // 最后一个div不需要右边框
         &:last-child {
-            border-right: none;
+            @apply tw-u-d59efb16cd;
         }
     }
 
     .history-content-data {
-        padding-left: 0;
+        @apply tw-u-63a7520ea1;
     }
     .empty {
-        text-align: center;
+        @apply tw-u-7023da700e;
     }
 
     .div-table-cell:first-child {
-        border-top-left-radius: 10px;
+        @apply tw-u-b8b48e5c61;
         // width: 100px;
     }
 
     .div-table-cell:last-child {
-        border-top-right-radius: 10px;
+        @apply tw-u-cae731c103;
     }
 }
 
 ::v-deep .el-input__prefix {
-    display: none;
+    @apply tw-u-9c766357e9;
 }
 ::v-deep .van-button--default {
-    --tw-text-opacity: 1;
-    color: #7e7e7e;
-    border-color: #6b7280;
-    background-color: transparent;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding: 0 10px;
+    @apply tw-u-c10941eeb0;
 }
 
 ::v-deep .van-button__content {
-    font-size: 20px;
+    @apply tw-u-e23c64af2b;
 }
 ::v-deep .van-button {
-    height: 40px;
+    @apply tw-u-3ef80bd050;
 }
 ::v-deep .van-icon-search:before {
-    font-weight: 700;
+    @apply tw-u-47e5cc95d6;
 }
 ::v-deep .el-input__inner {
-    padding: 0 10px;
-    font-size: 20px;
-    background-color: #24263a !important;
-    border-color: #6b7280 !important;
-    border-radius: 10px !important;
-    height: 40px;
-    line-height: 1px;
+    @apply tw-u-405a237f1d;
 }
 ::v-deep .van-list__finished-text {
-    font-size: 20px;
-    font-weight: 700;
-    color: #737373;
-    line-height: 40px;
-    padding-bottom: 10px;
+    @apply tw-u-91ee3e6d1e;
 }

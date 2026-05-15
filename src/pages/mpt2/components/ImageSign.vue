@@ -206,72 +206,48 @@ export default {
 @use "./ImageSign.scss";
 
 .single-images-num {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    justify-content: center;
-    overflow: hidden;
+    @apply tw-u-bb4805d1e1;
 
     img {
         // flex: 1 1 auto;
-        height: auto;
-        object-fit: contain;
+        @apply tw-u-00b1c73c95;
     }
     .single-images-num-single {
-        max-width: 15% !important;
+        @apply tw-u-1fd62df844;
     }
 }
 .single-images-num-active {
-    z-index: 1111;
+    @apply tw-u-8f144ad089;
 }
 
 .single-images-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
+    @apply tw-u-af52a6c60c;
 }
 
 .single-images-middle {
-    display: flex;
-    gap: 0;
+    @apply tw-u-bbca22a209;
 }
 
 .single-images-middle-div-new {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    @apply tw-u-f66f3f40d6;
 }
 
 .single-images-back-div {
-    position: relative;
+    @apply tw-u-019b327236;
 }
 
 .single-images-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    @apply tw-u-16c73dc5cf;
 }
 
 .single-footer-active {
-    background: #ffcc00;
-    color: #000;
-    border-radius: 6px;
+    @apply tw-u-41d3f43257;
 }
 
 .total-win {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff4444;
+    @apply tw-u-eb4ec8b61f;
 }
 .single-images-footer-tip {
-    margin-bottom: 10px;
+    @apply tw-u-273e413e34;
 }
 </style>

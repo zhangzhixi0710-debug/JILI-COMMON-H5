@@ -1,73 +1,40 @@
 .layout {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #14142b;
-    display: flex;
-    flex-direction: column;
+    @apply tw-u-f3d7ebded4;
 }
 
 .content {
-    width: calc(100% - 20px);
-    margin: 0 auto;
+    @apply tw-u-bfe55cfae3;
 }
 
 /* Chrome/Safari 隐藏滚动条但保留功能 */
 .content::-webkit-scrollbar {
-    width: 0 !important; /* 宽度设为 0 */
-    height: 0 !important;
-    display: none; /* 完全隐藏 */
+    @apply tw-u-28c6d5066a; /* 宽度设为 0 */ /* 完全隐藏 */
 }
 
 .main {
-    margin-top: 125px;
-    height: calc(100% - 205px);
-    overflow: auto;
+    @apply tw-u-8a336d80e3;
 
     .text-main {
-        position: fixed;
-        top: 80px;
-        background: #14142b;
-        height: 35px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 11;
+        @apply tw-u-8fdb79d454;
 
         .vertical-text {
-            height: 35px;
-            --tw-bg-opacity: 0.4;
-            background-color: rgba(252, 196, 13, var(--tw-bg-opacity));
-            border-radius: 10px;
-            width: calc(100% - 20px);
+            @apply tw-u-36ea8c1ff4;
         }
 
         .vertical-swiper {
-            height: 35px;
-            overflow: hidden;
-            position: relative;
+            @apply tw-u-04b0148490;
         }
     }
 }
 
 ::v-deep(.vertical-text .swiper-container-vertical) {
-    height: 35px;
+    @apply tw-u-1dd732bf6d;
 }
 
 ::v-deep(.vertical-text .swiper-slide) {
-    height: 35px;
-    line-height: 35px;
+    @apply tw-u-6e070759eb;
 }
 
 .notice-item {
-    text-align: left;
-    padding-left: 10px;
-    color: #fff;
-    line-height: 35px;
-    font-size: 20px;
-    height: 35px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    @apply tw-u-893246d6a6;
 }

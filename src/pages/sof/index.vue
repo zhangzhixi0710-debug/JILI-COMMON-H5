@@ -62,7 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 .game-layout {
-    height: 100%;
-    width: 100%;
+    @apply tw-u-bfbfa61dca;
 }
 </style>

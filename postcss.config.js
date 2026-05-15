@@ -1,5 +1,6 @@
 module.exports = {
     plugins: {
+        tailwindcss: {},
         // 'postcss-pxtorem': {
         //     rootValue: ({ file }) => {
         //         // 根据文件路径判断是移动端还是PC端

@@ -113,47 +113,33 @@ export default {
 @use "./ImageSign.scss";
 
 .single-images-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
+    @apply tw-u-af52a6c60c;
 }
 
 .single-images-middle {
-    display: flex;
-    gap: 0;
+    @apply tw-u-bbca22a209;
 }
 
 .single-images-middle-div-new {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    @apply tw-u-f66f3f40d6;
 }
 
 .single-images-back-div {
-    position: relative;
+    @apply tw-u-019b327236;
 }
 
 .single-images-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    @apply tw-u-16c73dc5cf;
 }
 
 .single-footer-active {
-    background: #ffcc00;
-    color: #000;
-    border-radius: 6px;
+    @apply tw-u-41d3f43257;
 }
 
 .total-win {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff4444;
+    @apply tw-u-eb4ec8b61f;
 }
 .single-images-footer-tip {
-    margin-bottom: 10px;
+    @apply tw-u-273e413e34;
 }
 </style>

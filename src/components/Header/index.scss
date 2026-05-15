@@ -1,57 +1,27 @@
 .header {
-    position: fixed;
-    height: 68px;
-    background-color: #24263a;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 100;
-    width: 100%;
-
-    --site-font-family-default: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
-        STHeitiTC-Light, "Microsoft JhengHei";
-    --site-font-family-th-TH: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
-        STHeitiTC-Light, "Microsoft JhengHei", "MN Kui Chai", sans-serif;
-    --site-font-family-my-MM: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light,
-        STHeitiTC-Light, "Microsoft JhengHei", Zawgyi-One, sans-serif;
+    @apply tw-u-761acd84d0;
 }
 
 .header-left-img {
-    width: 45px;
-    margin-left: 16px;
+    @apply tw-u-2e547422b4;
 }
 
 .header-right-img {
-    width: 45px;
-    margin-right: 20px;
+    @apply tw-u-d42472638c;
 }
 
 .header-right {
-    line-height: 18px;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    flex-direction: column;
-    padding-right: 12px;
+    @apply tw-u-854644ddd2;
 
     span {
-        font-size: 16px;
-        color: #7e7e7e;
+        @apply tw-u-34de68c6c4;
     }
 
     span:last-child {
-        color: #fcc40d;
-        font-weight: 600;
-        letter-spacing: 0;
-        font-family: Poppins, "微軟正黑體", Helvetica, Arial, PingFangTC-Light, STHeitiTC-Light,
-            "Microsoft JhengHei";
+        @apply tw-u-68a3c940fd;
     }
 }
 
 .header-title {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @apply tw-u-a85b54690d;
 }

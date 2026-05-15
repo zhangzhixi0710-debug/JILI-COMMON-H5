@@ -1,210 +1,125 @@
 .single-images-list {
-    overflow: hidden;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: #14142b;
+    @apply tw-u-4d710aa8f0;
 
     .single-images-contain {
-        margin: 0 5px 5px 5px;
-        padding: 2px;
+        @apply tw-u-fe51d3cb34;
 
         .single-images-mult {
-            background-color: #57534e;
-            text-align: center;
-            color: #fff;
-            font-size: 14px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            padding: 3px 0;
+            @apply tw-u-2df5761e66;
         }
     }
 
     .single-images-title {
-        background-color: #14142b;
-        word-wrap: break-word;
-        box-sizing: border-box;
-        color: #7e7e7e;
-        padding: 10px 0 10px 5px;
-        font-size: 16px;
+        @apply tw-u-cf301066c7;
     }
 
     .single-images-middle-free {
-        background-color: #d99694 !important;
+        @apply tw-u-a66ff49d7a;
     }
 
     .single-images-middle {
-        display: grid;
-        grid-auto-flow: column;
-        align-items: start; /* 顶部对齐 */
-        background-color: #bfbfbf;
-        padding: 4px;
-        position: relative;
+        @apply tw-u-ea0accdbfc; /* 顶部对齐 */
 
         .single-images-middle-div-new {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            @apply tw-u-91808cc196;
 
             .single-images-back-div {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                box-sizing: border-box;
+                @apply tw-u-6a24bb858e;
             }
 
             .single-images-back-active:nth-child(6n + 1) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 2) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 3) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 4) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 5) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 6) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:nth-child(6n + 7) {
-                border: 0.5px solid #5c5b5b;
-                height: 100%;
+                @apply tw-u-6bf8d4eb78;
             }
 
             .single-images-back-active:has(.single-images-active) {
-                border: none;
+                @apply tw-u-79129e1c16;
             }
 
             .single-images-active {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                box-sizing: border-box;
-                box-shadow: 0 0 0 0.8px red;
-                z-index: 1111;
+                @apply tw-u-a187177fa6;
             }
 
             .single-images-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background: #000;
-                opacity: 0.7;
+                @apply tw-u-c2ec388aaf;
             }
 
             img {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: cover;
-                box-sizing: border-box;
+                @apply tw-u-674e9c9f42;
             }
         }
     }
 
     .single-images-active-header {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: #262626;
-        padding: 5px 15px;
-        border: 1px solid #262626;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0.8;
-        z-index: 1112;
+        @apply tw-u-7365c5651b;
         span {
-            color: #fff;
-            font-size: 16px;
+            @apply tw-u-87db965e55;
         }
 
         span:first-child {
-            padding-right: 5px;
+            @apply tw-u-bd524468d3;
         }
     }
 
     .single-images-footer {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-auto-flow: row;
-        display: grid;
-        gap: 6px;
-        margin: 5px 0;
+        @apply tw-u-8cf037dd5e;
 
         div {
-            border: 1px solid #7e7e7e;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @apply tw-u-d94090c92d;
         }
 
         img {
-            width: 100%;
-            padding: 0 3px;
+            @apply tw-u-4e23a555de;
         }
 
         span {
-            padding: 2px 0;
-            color: #7e7e7e;
-            font-size: 14px;
+            @apply tw-u-40b52d4a07;
         }
 
         .single-footer-active {
-            color: #fff;
-            background-color: #fcc40d;
+            @apply tw-u-4d7e796898;
 
             span {
-                color: #fff;
+                @apply tw-u-4bbb41ad04;
             }
         }
     }
 
     .single-images-middle-content {
-        position: relative;
+        @apply tw-u-019b327236;
 
         div {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: #000;
+            @apply tw-u-62cb279882;
         }
     }
 
     .single-images-event {
-        width: 100%;
-        text-align: center;
-        padding: 5px 0;
-        font-size: 16px;
+        @apply tw-u-553d70db3d;
         span {
-            font-size: 16px;
-            color: #7e7e7e;
+            @apply tw-u-34de68c6c4;
         }
     }
 }

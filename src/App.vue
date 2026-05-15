@@ -17,33 +17,19 @@ export default {
 <style lang="scss">
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    font-family: "Microsoft JhengHei", "微軟正黑體", "PingFang SC", "Microsoft YaHei", sans-serif !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply tw-u-671d1f8c39;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow-x: hidden;
+    @apply tw-u-ce6ecb6b6f;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
+    @apply tw-u-5c8e655a90;
 }
 
 * {
-    scrollbar-width: none;
-    box-sizing: border-box;
+    @apply tw-u-fad84dfc30;
 }
 
 </style>

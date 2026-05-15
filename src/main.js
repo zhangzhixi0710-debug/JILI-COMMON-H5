@@ -6,6 +6,7 @@ import i18n from './i18n'
 import "./permission";
 // 引入rem自适应工具
 import '@/utils/rem.js'
+import "@/styles/tailwind/index.css";
 import '@/assets/styles/common.scss'
 import BorderImage  from '@assets/images/list/jili.webp'
 

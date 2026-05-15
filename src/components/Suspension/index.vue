@@ -130,46 +130,22 @@ export default {
 
 <style lang="scss" scoped>
 .floating-menu {
-    background-color: rgba(0, 0, 0, 0.8);;
-    border-radius: 65px;
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    height: 110px;
-    width: 110px;
-    touch-action: none;
+    @apply tw-u-065c8779af;
 }
 
 .avatar-wrapper {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
+    @apply tw-u-2994b0f925;
 }
 
 .avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @apply tw-u-645a146a41;
 }
 
 .icon-wrapper {
-    margin-left: 8px;
-    backdrop-filter: blur(6px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(0);
-    color: white;
-    font-size: 20px;
+    @apply tw-u-370ae98f26;
 
     img {
-        width: 60px;
-        height: 60px;
+        @apply tw-u-011b008360;
     }
 }
 </style>
