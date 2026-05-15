@@ -1,6 +1,16 @@
+let tailwindcss;
+
+try {
+    tailwindcss = require("@tailwindcss/postcss7-compat");
+} catch (error) {
+    throw new Error(
+        "当前项目使用 Vue CLI 4 / PostCSS 7，请先执行 npm install 安装 @tailwindcss/postcss7-compat 后再启动。"
+    );
+}
+
 module.exports = {
-    plugins: {
-        tailwindcss: {},
+    plugins: [
+        tailwindcss,
         // 'postcss-pxtorem': {
         //     rootValue: ({ file }) => {
         //         // 根据文件路径判断是移动端还是PC端
@@ -41,5 +51,5 @@ module.exports = {
         //         'last 2 versions'
         //     ]
         // }
-    }
+    ]
 }; 
