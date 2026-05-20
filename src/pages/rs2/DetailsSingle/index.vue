@@ -137,6 +137,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@use "./index.scss";
-</style>

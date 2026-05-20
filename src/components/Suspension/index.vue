@@ -52,7 +52,7 @@ export default {
         animateIcons() {
             this.menuItems.forEach((_, index) => {
                 const el = this.$refs["icon" + index][0];
-                const offsetX = window.px2rem(15 + index * 36);
+                const offsetX = 15 + index * 36;
 
                 if (this.menuOpen) {
                     gsap.to(el, {
@@ -86,7 +86,7 @@ export default {
                 : avatarWidth;
 
             gsap.to(this.$refs.menu, {
-                width: window.px2rem(totalWidth),
+                width: totalWidth,
                 duration: 0.4,
                 ease: "power2.out",
             });
@@ -128,48 +128,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.floating-menu {
-    background-color: rgba(0, 0, 0, 0.8);;
-    border-radius: 65px;
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    height: 110px;
-    width: 110px;
-    touch-action: none;
-}
-
-.avatar-wrapper {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.icon-wrapper {
-    margin-left: 8px;
-    backdrop-filter: blur(6px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(0);
-    color: white;
-    font-size: 20px;
-
-    img {
-        width: 60px;
-        height: 60px;
-    }
-}
-</style>

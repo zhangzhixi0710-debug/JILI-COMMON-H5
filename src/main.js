@@ -4,10 +4,8 @@ import router from "./router";
 import store from "./store";
 import i18n from './i18n'
 import "./permission";
-// 引入rem自适应工具
-import '@/utils/rem.js'
-import '@/assets/styles/common.scss'
-import '@/styles/index.scss'
+import "@/styles/themes/theme.css";
+import "@/styles/tailwind/index.css";
 import BorderImage  from '@assets/images/list/jili.webp'
 
 import { Tabbar, TabbarItem, Loading, Button, List } from 'vant'

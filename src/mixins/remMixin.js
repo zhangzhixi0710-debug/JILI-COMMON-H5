@@ -1,58 +1,54 @@
-import { rem, remPC, getDeviceType, getDirection } from '@/utils/rem.js'
+import { getDeviceType, getDirection } from "@/utils/rem.js";
 
 export default {
     data() {
         return {
-            deviceType: getDeviceType(),
-            direction: getDirection()
-        }
-    },
-    methods: {
-        // 移动端rem计算
-        rem(px) {
-            return rem(px);
-        },
-        // PC端rem计算
-        remPC(px) {
-            return remPC(px);
-        },
-        // 根据设备类型自动选择rem计算
-        remAuto(px) {
-            return this.deviceType === 'mobile' ? this.rem(px) : this.remPC(px);
-        },
-        // 获取设备类型
-        getDeviceType() {
-            return getDeviceType();
-        },
-        // 检查是否为移动设备
-        isMobile() {
-            return this.deviceType === 'mobile';
-        },
-        // 检查是否为PC设备
-        isPC() {
-            return this.deviceType === 'pc';
-        },
-        // 检查是否为竖屏
-        isPortrait() {
-            return this.direction === 'portrait';
-        },
-        // 检查是否为竖屏
-        isLandscape() {
-            return this.direction === 'landscape';
-        },
+            deviceType: getDeviceType(), // 当前设备类型，用于区分移动端和桌面端布局
+            direction: getDirection(), // 当前屏幕方向，用于横竖屏布局切换
+        };
     },
     mounted() {
-        // 监听窗口大小变化
-        window.addEventListener('resize', () => {
-            this.deviceType = getDeviceType();
-            this.direction = getDirection();
-        });
+        window.addEventListener("resize", this.updateScreenState);
     },
     beforeDestroy() {
-        // 清理事件监听
-        window.removeEventListener('resize', () => {
+        window.removeEventListener("resize", this.updateScreenState);
+    },
+    methods: {
+        /**
+         * 更新屏幕状态
+         * @returns {void}
+         */
+        updateScreenState() {
             this.deviceType = getDeviceType();
             this.direction = getDirection();
-        });
-    }
-} 
+        },
+        /**
+         * 判断是否为移动端
+         * @returns {Boolean}
+         */
+        isMobile() {
+            return this.deviceType === "mobile";
+        },
+        /**
+         * 判断是否为桌面端
+         * @returns {Boolean}
+         */
+        isPC() {
+            return this.deviceType === "pc";
+        },
+        /**
+         * 判断是否为竖屏
+         * @returns {Boolean}
+         */
+        isPortrait() {
+            return this.direction === "portrait";
+        },
+        /**
+         * 判断是否为横屏
+         * @returns {Boolean}
+         */
+        isLandscape() {
+            return this.direction === "landscape";
+        },
+    },
+};

@@ -53,9 +53,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.game-layout {
-    height: 100%;
-    width: 100%;
-}
-</style>

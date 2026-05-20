@@ -133,12 +133,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@use "./index.scss";
-.main-pc .single-images-two {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-.main-pc .single-detail-two {
-    grid-template-columns: repeat(3, 1fr) !important;
-}
-</style>

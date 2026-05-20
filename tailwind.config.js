@@ -36,8 +36,21 @@ module.exports = {
                     panel: "#111827",
                     primary: "#F6C445",
                     accent: "#06B6D4",
-                    danger: "#EF4444"
-                }
+                    danger: "#EF4444",
+                    page: "#14142b",
+                    surface: "#24263a",
+                    table: "#343542",
+                    muted: "#7e7e7e",
+                    weak: "#999999",
+                    gold: "#fcc40d",
+                },
+            },
+            fontSize: {
+                "game-xs": "14px",
+                "game-sm": "16px",
+                "game-md": "18px",
+                "game-lg": "20px",
+                "game-xl": "24px",
             },
             boxShadow: {
                 neon: "0 0 0.5rem rgba(6, 182, 212, 0.45)",
